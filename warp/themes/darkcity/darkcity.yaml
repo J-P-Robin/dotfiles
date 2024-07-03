@@ -1,0 +1,27 @@
+name: Dark City
+accent: '#03D0F6'
+background: '#010F14'
+foreground: '#ffffff'
+background_image:
+  path: darkcity/darkcity.jpg
+  opacity: 25
+details: darker
+terminal_colors:
+  normal:
+    black: '#000000'
+    white: '#ffffff'
+    red: '#E64653'
+    cyan: '#89DCEC'
+    blue: '#07A5E5'
+    green: '#95E2D5'
+    yellow: '#F2853B'
+    magenta: '#C4606E'
+  bright:
+      black: '#000000'
+      white: '#ffffff'
+      red: '#e90934'
+      cyan: '#03D0F6'
+      blue: '#017798'
+      green: '#007D87'
+      yellow: '#F2853B'
+      magenta: '#C4606E'
