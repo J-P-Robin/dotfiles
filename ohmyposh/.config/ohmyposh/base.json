@@ -1,0 +1,161 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+	"palette": {
+		"os_background": "#fff",
+		"os_foreground": "#000",
+		"os_fade1": "#c0c0c0",
+		"os_fade2": "#808080",
+		"os_fade3": "#404040",
+		"path_background": "#89B4FA",
+		"path_foreground": "#181926",
+		"git_background": "#7D84E8",
+		"git_foreground": "#fff",
+		"git_notice_background": "#5B63E2",
+		"git_notice_foreground": "white",
+		"time_background": "#fff",
+		"time_foreground": "#000",
+		"time_fade1": "#c0c0c0",
+		"time_fade2": "#808080",
+		"time_fade3": "#404040",
+		"error": "red",
+		"default": "#fff"
+	},
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+				{
+					"type": "text",
+					"style": "plain",
+					"background": "p:os_fade3",
+					"foreground": "p:os_fade3",
+					"template": "a"
+				},
+				{
+					"type": "text",
+					"style": "plain",
+					"background": "p:os_fade2",
+					"foreground": "p:os_fade2",
+					"template": "a"
+				},
+				{
+					"type": "text",
+					"style": "plain",
+					"background": "p:os_fade1",
+					"foreground": "p:os_fade1",
+					"template": "a"
+				},
+				{
+					"type": "os",
+					"style": "diamond",
+					"trailing_diamond": "\ue0b4",
+					"background": "p:os_background",
+					"foreground": "p:os_foreground"
+				},
+				{
+					"type": "path",
+					"style": "diamond",
+					"trailing_diamond": "\ue0b4",
+					"background": "p:path_background",
+					"foreground": "p:path_foreground",
+					"properties": {
+						"style": "full"
+					}
+				},
+				{
+					"type": "git",
+					"style": "diamond",
+					"background": "p:git_background",
+					"foreground": "p:git_foreground",
+					"trailing_diamond": "\ue0b4",
+					"template": " {{ .HEAD }}",
+					"properties": {
+						"fetch_status": true
+					}
+				},
+				{
+					"type": "git",
+					"style": "diamond",
+					"background": "p:git_notice_background",
+					"foreground": "p:git_notice_foreground",
+					"trailing_diamond": "\ue0b4",
+					"template": "{{ if or (.Working.Changed) (.Staging.Changed) }} *{{ end }} {{ if gt .Behind 0 }}\uea9a{{ end }}{{ if gt .Ahead 0 }}\ueaa1{{ end }}",
+					"properties": {
+						"fetch_status": true,
+						"commit_icon": "@"
+					}
+				}
+      ]
+    },
+		{
+			"type": "rprompt",
+			"overflow": "hidden",
+			"segments": [
+				{
+					"type": "executiontime",
+					"style": "diamond",
+					"leading_diamond": "\ue0b6",
+					"background": "p:time_background",
+					"foreground": "p:time_foreground",
+					"template": "{{ .FormattedMs }} "
+				},
+				{
+					"type": "text",
+					"style": "plain",
+					"background": "p:time_fade1",
+					"foreground": "p:time_fade1",
+					"template": "a"
+				},
+				{
+					"type": "text",
+					"style": "plain",
+					"background": "p:time_fade2",
+					"foreground": "p:time_fade2",
+					"template": "a"
+				},
+				{
+					"type": "text",
+					"style": "plain",
+					"background": "p:time_fade3",
+					"foreground": "p:time_fade3",
+					"template": "a"
+				}
+			]
+		},
+		{
+			"type": "prompt",
+			"alignment": "left",
+			"newline": true,
+			"segments": [
+				{
+					"type": "text",
+					"style": "plain",
+					"background": "transparent",
+					"foreground_templates": [
+						"{{ if gt .Code 0 }}p:error{{ end }}",
+						"{{ if eq .Code 0 }}p:default{{ end }}"
+					],
+					"template": "\u276f "
+				}
+			]
+		}
+  ],
+	"transient_prompt": {
+		"background": "transparent",
+		"foreground_templates": [
+			"{{if gt .Code 0}}p:error{{end}}",
+			"{{if eq .Code 0}}p:default{{end}}"
+		],
+		"template": "\u276f "
+	},
+	"secondary_prompt": {
+		"background": "transparent",
+		"foreground_templates": [
+			"{{if gt .Code 0}}p:error{{end}}",
+			"{{if eq .Code 0}}p:default{{end}}"
+		],
+		"template": "\u276f\u276f "
+	}
+}
