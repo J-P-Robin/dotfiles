@@ -2,19 +2,20 @@
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "version": 2,
 	"palette": {
-		"os_background": "#fff",
-		"os_foreground": "#000",
-		"os_fade1": "#c0c0c0",
-		"os_fade2": "#808080",
-		"os_fade3": "#404040",
+		"os_background": "#303446",
+		"os_foreground": "#E6E9EF",
+		"os_fade1": "#24273A",
+		"os_fade2": "#1E1E2E",
+		"os_fade3": "#11111A",
 		"path_background": "#89B4FA",
-		"path_foreground": "#181926",
-		"git_background": "#7D84E8",
-		"git_foreground": "#fff",
-		"git_notice_background": "#5B63E2",
-		"git_notice_foreground": "white",
-		"time_background": "#fff",
-		"time_foreground": "#000",
+		"path_foreground": "#303446",
+		"git_background": "#A6D189",
+		"git_foreground": "#303446",
+		"node_background": "#FAE3AF",
+		"node_foreground": "#303446",
+		"extra": "#FAB487",
+		"time_background": "#303446",
+		"time_foreground": "#E6E9EF",
 		"time_fade1": "#c0c0c0",
 		"time_fade2": "#808080",
 		"time_fade3": "#404040",
@@ -50,14 +51,14 @@
 				{
 					"type": "os",
 					"style": "diamond",
-					"trailing_diamond": "\ue0b4",
+					"trailing_diamond": "",
 					"background": "p:os_background",
 					"foreground": "p:os_foreground"
 				},
 				{
 					"type": "path",
 					"style": "diamond",
-					"trailing_diamond": "\ue0b4",
+					"trailing_diamond": "",
 					"background": "p:path_background",
 					"foreground": "p:path_foreground",
 					"properties": {
@@ -67,63 +68,53 @@
 				{
 					"type": "git",
 					"style": "diamond",
+          "properties": {
+            "branch_icon": " "
+          },
 					"background": "p:git_background",
 					"foreground": "p:git_foreground",
-					"trailing_diamond": "\ue0b4",
-					"template": " {{ .HEAD }}",
+					"trailing_diamond": "",
 					"properties": {
 						"fetch_status": true
 					}
 				},
-				{
-					"type": "git",
+        {
+          "type": "project",
+          "style": "diamond",
+					"trailing_diamond": "",
+					"background": "p:node_background",
+					"foreground": "p:node_background",
+          "properties": {
+            "always_enabled": true
+          },
+          "template": "{{ if not .Type }}a{{ end }}"
+        },
+        {
+          "type": "node",
+          "style": "diamond",
+					"trailing_diamond": "",
+					"background": "p:node_background",
+					"foreground": "p:node_foreground",
+          "template": " 󰎙 {{ .Full }}"
+        },
+        {
+          "type": "text",
+          "style": "diamond",
+					"trailing_diamond": "",
+					"background": "p:extra",
+					"foreground": "p:extra",
+          "template": "a"
+        },
+        {
+					"type": "time",
 					"style": "diamond",
-					"background": "p:git_notice_background",
-					"foreground": "p:git_notice_foreground",
-					"trailing_diamond": "\ue0b4",
-					"template": "{{ if or (.Working.Changed) (.Staging.Changed) }} *{{ end }} {{ if gt .Behind 0 }}\uea9a{{ end }}{{ if gt .Ahead 0 }}\ueaa1{{ end }}",
-					"properties": {
-						"fetch_status": true,
-						"commit_icon": "@"
-					}
+					"trailing_diamond": "",
+					"background": "p:time_background",
+					"foreground": "p:time_foreground",
+          "template": "  {{ .Format }}"
 				}
       ]
     },
-		{
-			"type": "rprompt",
-			"overflow": "hidden",
-			"segments": [
-				{
-					"type": "executiontime",
-					"style": "diamond",
-					"leading_diamond": "\ue0b6",
-					"background": "p:time_background",
-					"foreground": "p:time_foreground",
-					"template": "{{ .FormattedMs }} "
-				},
-				{
-					"type": "text",
-					"style": "plain",
-					"background": "p:time_fade1",
-					"foreground": "p:time_fade1",
-					"template": "a"
-				},
-				{
-					"type": "text",
-					"style": "plain",
-					"background": "p:time_fade2",
-					"foreground": "p:time_fade2",
-					"template": "a"
-				},
-				{
-					"type": "text",
-					"style": "plain",
-					"background": "p:time_fade3",
-					"foreground": "p:time_fade3",
-					"template": "a"
-				}
-			]
-		},
 		{
 			"type": "prompt",
 			"alignment": "left",
@@ -137,7 +128,7 @@
 						"{{ if gt .Code 0 }}p:error{{ end }}",
 						"{{ if eq .Code 0 }}p:default{{ end }}"
 					],
-					"template": "\u276f "
+					"template": "\uf061 "
 				}
 			]
 		}
