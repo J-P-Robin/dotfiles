@@ -16,10 +16,10 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 vim.opt.autoread = true
 vim.opt.laststatus = 2
-vim.opt.backspace = '2'
+vim.opt.backspace = "2"
 
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = 'auto'
+vim.opt.signcolumn = "auto"
 
 vim.opt.undofile = true
-vim.opt.undodir = os.getenv('HOME') .. '/.vim/undodir'
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"

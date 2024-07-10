@@ -5,13 +5,9 @@ return {
 	lazy = false,
 	config = function()
 		require("catppuccin").setup({
+      flavour = "mocha",
 			transparent_background = true,
-			color_overrides = {
-				all = {
-					surface1 = "#6C7086",
-					base = "#323244",
-				},
-			},
+			color_overrides = {},
 			highlight_overrides = {
 				all = function(colors)
 					return {
