@@ -1,89 +1,87 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "version": 2,
-	"palette": {
-		"os_background": "#303446",
-		"os_foreground": "#E6E9EF",
-		"os_fade1": "#24273A",
-		"os_fade2": "#1E1E2E",
-		"os_fade3": "#11111A",
-		"path_background": "#89B4FA",
-		"path_foreground": "#303446",
-		"git_background": "#A6D189",
-		"git_foreground": "#303446",
-		"node_background": "#FAE3AF",
-		"node_foreground": "#303446",
-		"extra": "#FAB487",
-		"time_background": "#303446",
-		"time_foreground": "#E6E9EF",
-		"time_fade1": "#c0c0c0",
-		"time_fade2": "#808080",
-		"time_fade3": "#404040",
-		"error": "red",
-		"default": "#fff"
-	},
+  "palette": {
+    "os_background": "#303446",
+    "os_foreground": "#E6E9EF",
+    "os_fade1": "#24273A",
+    "os_fade2": "#1E1E2E",
+    "os_fade3": "#11111A",
+    "path_background": "#89B4FA",
+    "path_foreground": "#303446",
+    "git_background": "#A6D189",
+    "git_foreground": "#303446",
+    "node_background": "#FAE3AF",
+    "node_foreground": "#303446",
+    "extra": "#FAB487",
+    "time_background": "#303446",
+    "time_foreground": "#E6E9EF",
+    "time_fade1": "#c0c0c0",
+    "time_fade2": "#808080",
+    "time_fade3": "#404040",
+    "error": "red",
+    "default": "#fff"
+  },
   "blocks": [
     {
       "type": "prompt",
       "alignment": "left",
       "segments": [
-				{
-					"type": "text",
-					"style": "plain",
-					"background": "p:os_fade3",
-					"foreground": "p:os_fade3",
-					"template": "a"
-				},
-				{
-					"type": "text",
-					"style": "plain",
-					"background": "p:os_fade2",
-					"foreground": "p:os_fade2",
-					"template": "a"
-				},
-				{
-					"type": "text",
-					"style": "plain",
-					"background": "p:os_fade1",
-					"foreground": "p:os_fade1",
-					"template": "a"
-				},
-				{
-					"type": "os",
-					"style": "diamond",
-					"trailing_diamond": "",
-					"background": "p:os_background",
-					"foreground": "p:os_foreground"
-				},
-				{
-					"type": "path",
-					"style": "diamond",
-					"trailing_diamond": "",
-					"background": "p:path_background",
-					"foreground": "p:path_foreground",
-					"properties": {
-						"style": "full"
-					}
-				},
-				{
-					"type": "git",
-					"style": "diamond",
+        {
+          "type": "text",
+          "style": "plain",
+          "background": "p:os_fade3",
+          "foreground": "p:os_fade3",
+          "template": "a"
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "background": "p:os_fade2",
+          "foreground": "p:os_fade2",
+          "template": "a"
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "background": "p:os_fade1",
+          "foreground": "p:os_fade1",
+          "template": "a"
+        },
+        {
+          "type": "os",
+          "style": "diamond",
+          "trailing_diamond": "",
+          "background": "p:os_background",
+          "foreground": "p:os_foreground"
+        },
+        {
+          "type": "path",
+          "style": "diamond",
+          "trailing_diamond": "",
+          "background": "p:path_background",
+          "foreground": "p:path_foreground",
           "properties": {
+            "style": "full"
+          }
+        },
+        {
+          "type": "git",
+          "style": "diamond",
+          "background": "p:git_background",
+          "foreground": "p:git_foreground",
+          "trailing_diamond": "",
+          "properties": {
+            "fetch_status": true,
             "branch_icon": " "
-          },
-					"background": "p:git_background",
-					"foreground": "p:git_foreground",
-					"trailing_diamond": "",
-					"properties": {
-						"fetch_status": true
-					}
-				},
+          }
+        },
         {
           "type": "project",
           "style": "diamond",
-					"trailing_diamond": "",
-					"background": "p:node_background",
-					"foreground": "p:node_background",
+          "trailing_diamond": "",
+          "background": "p:node_background",
+          "foreground": "p:node_background",
           "properties": {
             "always_enabled": true
           },
@@ -92,61 +90,61 @@
         {
           "type": "node",
           "style": "diamond",
-					"trailing_diamond": "",
-					"background": "p:node_background",
-					"foreground": "p:node_foreground",
+          "trailing_diamond": "",
+          "background": "p:node_background",
+          "foreground": "p:node_foreground",
           "template": " 󰎙 {{ .Full }}"
         },
         {
           "type": "text",
           "style": "diamond",
-					"trailing_diamond": "",
-					"background": "p:extra",
-					"foreground": "p:extra",
+          "trailing_diamond": "",
+          "background": "p:extra",
+          "foreground": "p:extra",
           "template": "a"
         },
         {
-					"type": "time",
-					"style": "diamond",
-					"trailing_diamond": "",
-					"background": "p:time_background",
-					"foreground": "p:time_foreground",
+          "type": "time",
+          "style": "diamond",
+          "trailing_diamond": "",
+          "background": "p:time_background",
+          "foreground": "p:time_foreground",
           "template": "  {{ .Format }}"
-				}
+        }
       ]
     },
-		{
-			"type": "prompt",
-			"alignment": "left",
-			"newline": true,
-			"segments": [
-				{
-					"type": "text",
-					"style": "plain",
-					"background": "transparent",
-					"foreground_templates": [
-						"{{ if gt .Code 0 }}p:error{{ end }}",
-						"{{ if eq .Code 0 }}p:default{{ end }}"
-					],
-					"template": "\uf061 "
-				}
-			]
-		}
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "background": "transparent",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}p:error{{ end }}",
+            "{{ if eq .Code 0 }}p:default{{ end }}"
+          ],
+          "template": " "
+        }
+      ]
+    }
   ],
-	"transient_prompt": {
-		"background": "transparent",
-		"foreground_templates": [
-			"{{if gt .Code 0}}p:error{{end}}",
-			"{{if eq .Code 0}}p:default{{end}}"
-		],
-		"template": "\u276f "
-	},
-	"secondary_prompt": {
-		"background": "transparent",
-		"foreground_templates": [
-			"{{if gt .Code 0}}p:error{{end}}",
-			"{{if eq .Code 0}}p:default{{end}}"
-		],
-		"template": "\u276f\u276f "
-	}
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground_templates": [
+      "{{if gt .Code 0}}p:error{{end}}",
+      "{{if eq .Code 0}}p:default{{end}}"
+    ],
+    "template": "❯ "
+  },
+  "secondary_prompt": {
+    "background": "transparent",
+    "foreground_templates": [
+      "{{if gt .Code 0}}p:error{{end}}",
+      "{{if eq .Code 0}}p:default{{end}}"
+    ],
+    "template": "❯❯ "
+  }
 }
