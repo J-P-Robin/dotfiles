@@ -24,6 +24,19 @@ export PATH="$PATH:/opt/nvim/"
 source <(fzf --zsh)
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 alias sd="cd ~ && cd \$(find * -type d | fzf)"
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo \$'{}" "$@" ;;
+    ssh)          fzf --preview 'dig {}' "$@" ;;
+    *)            fzf --preview "--preview 'bat -n --color=always --line-range :500 {}'" "$@" ;;
+  esac
+}
 
 # ----- FNM -----
 eval "$(fnm env --use-on-cd)"
@@ -41,3 +54,9 @@ fi
 
 # ----- TMUX -----
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=241'
+
+# ----- EZA -----
+alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+
+# ----- ZOXIDE -----
+eval "$(zoxide init zsh)"
