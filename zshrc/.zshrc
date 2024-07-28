@@ -3,8 +3,6 @@ export ZSH=$HOME/.oh-my-zsh
 
 zstyle ':omz:update' mode auto
 
-DISABLE_AUTO_TITLE="true"
-
 plugins=(
   git
   z
@@ -54,6 +52,9 @@ fi
 
 # ----- TMUX -----
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=241'
+export TMUXP_CONFIGDIR="./.tmuxp"
+alias tmux_tasks="node $HOME/.tmuxp/tasks.js"
+DISABLE_AUTO_TITLE="true"
 
 # ----- EZA -----
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
