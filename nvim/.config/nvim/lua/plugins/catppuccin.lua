@@ -11,6 +11,7 @@ return {
 			highlight_overrides = {
 				all = function(colors)
 					return {
+            --Cursor = { fg = "#ffffff", bg = colors.rosewater },
 						CursorLineNr = { fg = colors.rosewater, style = { "bold" } },
 						CursorLine = { bg = "NONE" },
 					}
