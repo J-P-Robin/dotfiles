@@ -3,7 +3,7 @@ accent: '#03D0F6'
 background: '#010F14'
 foreground: '#ffffff'
 background_image:
-  path: darkcity/darkcity.jpg
+  path: ~/.assets/images/darkcity.jpg
   opacity: 25
 details: darker
 terminal_colors:
