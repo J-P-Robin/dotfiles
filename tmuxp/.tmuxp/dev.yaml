@@ -1,0 +1,10 @@
+session_name: dev
+windows:
+  - window_name: dev
+    panes:
+      - nvim
+  - window_name: processes
+    layout: main-vertical
+    panes:
+      - npm run dev
+      - npm run storybook

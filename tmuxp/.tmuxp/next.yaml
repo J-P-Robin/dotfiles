@@ -1,0 +1,9 @@
+session_name: next-project
+windows:
+  - window_name: dev
+  - window_name: processes
+    layout: main-vertical
+    panes:
+      - npm run storybook
+      - npm run dev
+      - npm run dev:proxy
