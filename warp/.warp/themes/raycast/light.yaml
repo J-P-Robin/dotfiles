@@ -1,0 +1,27 @@
+name: Raycast Light
+accent: '#7287FD'
+background: '#FFFFFF'
+foreground: '#010F14'
+background_image:
+  path: ~/.assets/images/chromatic_light_2.jpg
+  opacity: 25
+details: lighter
+terminal_colors:
+  normal:
+    black: '#4D4F69'
+    white: '#EFF1F5'
+    red: '#D20F39'
+    cyan: '#169299'
+    blue: '#1E66F5'
+    green: '#169299'
+    yellow: '#E08E1D'
+    magenta: '#DB8A78'
+  bright:
+    black: '#4D4F69'
+    white: '#EFF1F5'
+    red: '#D20F39'
+    cyan: '#169299'
+    blue: '#1E66F5'
+    green: '#169299'
+    yellow: '#E08E1D'
+    magenta: '#DB8A78'

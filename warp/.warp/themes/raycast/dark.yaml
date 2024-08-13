@@ -1,0 +1,27 @@
+name: Raycast Dark
+accent: '#DB8A78'
+background: '#010F14'
+foreground: '#ffffff'
+background_image:
+  path: ~/.assets/images/blue_distortion_1.jpg
+  opacity: 25
+details: darker
+terminal_colors:
+  normal:
+    black: '#11111B'
+    white: '#CDD6F4'
+    red: '#F38BA8'
+    cyan: '#95E2D5'
+    blue: '#89B4FA'
+    green: '#A6E3A1'
+    yellow: '#F9E2AF'
+    magenta: '#F5C2E7'
+  bright:
+    black: '#11111B'
+    white: '#CDD6F4'
+    red: '#F38BA8'
+    cyan: '#95E2D5'
+    blue: '#89B4FA'
+    green: '#A6E3A1'
+    yellow: '#F9E2AF'
+    magenta: '#F5C2E7'

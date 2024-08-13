@@ -1,6 +1,7 @@
 # ----- Oh My Zsh -----
 export ZSH=$HOME/.oh-my-zsh
 
+export THEME_MODE="dark"
 zstyle ':omz:update' mode auto
 
 plugins=(
@@ -17,6 +18,7 @@ export PATH=/opt/homebrew/bin:$PATH
 
 # ----- Neovim -----
 export PATH="$PATH:/opt/nvim/"
+# export TERM=xterm-256color
 
 # ----- FZF -----
 source <(fzf --zsh)
