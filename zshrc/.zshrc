@@ -65,4 +65,3 @@ alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time
 
 # ----- ZOXIDE -----
 eval "${$(zoxide init zsh):s#_files -/#_cd#}"
-alias cd=z
