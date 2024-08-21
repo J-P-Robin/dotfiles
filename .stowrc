@@ -1,0 +1,13 @@
+# GLOBAL
+--ignore='\.DS_Store'
+
+# KARABINER
+--ignore='karabiner/assets/'
+--ignore='karabiner/automatic_backups/'
+
+# ZED
+--ignore='zed/\.tmp*'
+--ignore='zed/conversations/'
+--ignore='zed/embeddings/'
+--ignore='zed/prompts/'
+--ignore='zed/themes/'
