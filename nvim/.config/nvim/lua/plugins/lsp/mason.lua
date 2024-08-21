@@ -1,22 +1,35 @@
 return {
-  {
-    "williamboman/mason.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonLog", "MasonUpdateAll" },
-    config = function()
-      require("mason").setup()
-    end,
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    dependencies = {
-      "williamboman/mason.nvim",
-    },
-    event = { "BufReadPre", "BufNewFile" },
-    config = function()
-      require("mason-lspconfig").setup({
-        automatic_installation = true,
-      })
-    end,
-  }
+	{
+		"williamboman/mason.nvim",
+		dependencies = {
+			"williamboman/mason-lspconfig.nvim",
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
+		},
+		config = function()
+			require("mason").setup({})
+
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					"cssls",
+					"cssmodules_ls",
+					"css_variables",
+					"emmet_language_server",
+					"html",
+					"jsonls",
+					"lua_ls",
+					"stylelint_lsp",
+					"tsserver",
+				},
+				automatic_installation = true,
+			})
+
+			require("mason-tool-installer").setup({
+				ensure_installed = {
+					"stylua",
+					"twigcs",
+					"twig-cs-fixer",
+				},
+			})
+		end,
+	},
 }
