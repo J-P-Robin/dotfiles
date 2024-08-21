@@ -1,7 +1,6 @@
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
-  opts = {},
   keys = {
     {
       "<leader>?",
@@ -14,6 +13,7 @@ return {
   config = function()
     require("which-key").setup({
       preset = "helix",
+      delay = 500,
     })
   end,
 }

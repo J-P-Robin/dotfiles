@@ -8,19 +8,20 @@ return {
   config = function()
     require("catppuccin").setup({
       flavour = vim.env.THEME_MODE == "light" and "latte" or "mocha",
-			transparent_background = true,
-			color_overrides = {},
-			highlight_overrides = {
-				all = function(colors)
-					return {
+      transparent_background = true,
+      color_overrides = {},
+      highlight_overrides = {
+        all = function(colors)
+          return {
             --Cursor = { fg = "#ffffff", bg = colors.rosewater },
-						CursorLineNr = { fg = colors.rosewater, style = { "bold" } },
-						CursorLine = { bg = "NONE" },
+            CursorLineNr = { fg = colors.rosewater, style = { "bold" } },
+            CursorLine = { bg = "NONE" },
+            IndentBlanklineIndent1 = { fg = colors.overlay0 },
 
             CmpItemMenu = { fg = colors.surface0 },
-					}
-				end,
-			},
+          }
+        end,
+      },
       integrations = {
         mason = true,
         neotree = true,

@@ -16,7 +16,7 @@ return {
 					"emmet_language_server",
 					"html",
 					"jsonls",
-					"lua_ls",
+					--"lua_ls",
 					"stylelint_lsp",
 					"tsserver",
 				},
@@ -25,7 +25,7 @@ return {
 
 			require("mason-tool-installer").setup({
 				ensure_installed = {
-					"stylua",
+					--"stylua",
 					"twigcs",
 					"twig-cs-fixer",
 				},

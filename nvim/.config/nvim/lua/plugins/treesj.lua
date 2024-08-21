@@ -1,10 +1,10 @@
 return {
-  'Wansmer/treesj',
+  "Wansmer/treesj",
   dependencies = {
-    'nvim-treesitter/nvim-treesitter',
+    "nvim-treesitter/nvim-treesitter",
   },
-  cmd = 'TSJToggle',
+  cmd = "TSJToggle",
   config = function()
-    require('treesj').setup()
+    require("treesj").setup()
   end,
 }
