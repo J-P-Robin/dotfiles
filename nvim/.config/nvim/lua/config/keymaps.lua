@@ -43,12 +43,23 @@ local harpoon_telescope = function()
     local make_finder = function()
       local paths = {}
       for index, item in ipairs(harpoon_files.items) do
-        local title = string.format("(%s) %s", index, item.value)
-        table.insert(paths, title)
+        table.insert(paths, {
+          value = item.value,
+          display = string.format("(%s) %s", index, item.value),
+          ordinal = item.value,
+        })
       end
 
       return require("telescope.finders").new_table({
         results = paths,
+        entry_maker = function(entry)
+          return {
+            value = entry.value,
+            display = entry.display,
+            ordinal = entry.ordinal,
+            path = entry.value,
+          }
+        end,
       })
     end
 
@@ -68,6 +79,14 @@ local harpoon_telescope = function()
             current_picker:refresh(make_finder())
           end)
 
+          map("i", "<C-c>", function()
+            local state = require("telescope.actions.state")
+            local current_picker = state.get_current_picker(prompt_bufnr)
+
+            harpoon:list():clear()
+            current_picker:refresh(make_finder())
+          end)
+
           return true
         end,
       })
@@ -82,9 +101,17 @@ wk.add({
     "<leader>ha",
     function()
       require("harpoon"):list():add()
-      vim.notify("added to Harpoon")
+      vim.notify("Added to Harpoon")
     end,
     desc = "Add to Harpoon",
+  },
+  {
+    "<leader>hc",
+    function()
+      require("harpoon"):list():clear()
+      vim.notify("Cleared Harpoon")
+    end,
+    desc = "Clear Harpoon",
   },
   {
     "<leader>hd",
