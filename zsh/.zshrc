@@ -57,9 +57,6 @@ export BAT_THEME="Catppuccin Mocha"
 # ----- WGET -----
 alias wget="wget2"
 
-# ----- FIGMA -----
-# FIGMA_CLIENT_ID and FIGMA_CLIENT_SECRET set in ~/.zshrc.secrets
-
 # ----- Oh My Posh -----
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/base.json)"
@@ -74,9 +71,6 @@ export DISABLE_AUTO_TITLE="true"
 
 # ----- EZA -----
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-
-# ----- STORYBLOK -----
-# STORYBLOK_PAT_WEBSITE set in ~/.zshrc.secrets
 
 # ----- Windsurf -----
 export PATH="/Applications/Windsurf.app/Contents/Resources/app/bin:$PATH"
