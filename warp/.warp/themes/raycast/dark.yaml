@@ -2,6 +2,7 @@ name: Raycast Dark
 accent: '#DB8A78'
 background: '#010F14'
 foreground: '#ffffff'
+cursor: '#ffffff'
 background_image:
   path: ~/.assets/images/blue_distortion_1.jpg
   opacity: 25
