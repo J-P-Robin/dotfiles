@@ -1,0 +1,2 @@
+# Only source .zshrc in zsh (not in POSIX sh used by husky)
+[ -n "$ZSH_VERSION" ] && source ~/.zshrc
