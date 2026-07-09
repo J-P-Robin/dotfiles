@@ -58,8 +58,7 @@ export BAT_THEME="Catppuccin Mocha"
 alias wget="wget2"
 
 # ----- FIGMA -----
-export FIGMA_CLIENT_ID="REDACTED_FIGMA_CLIENT_ID"
-# FIGMA_CLIENT_SECRET set in ~/.zshrc.secrets
+# FIGMA_CLIENT_ID and FIGMA_CLIENT_SECRET set in ~/.zshrc.secrets
 
 # ----- Oh My Posh -----
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
