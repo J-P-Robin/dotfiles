@@ -5,6 +5,16 @@
 --ignore='karabiner/assets/'
 --ignore='karabiner/automatic_backups/'
 
+# VSCODE
+--ignore='vscode/cli/'
+--ignore='vscode/extensions/'
+--ignore='vscode/argv.json'
+
+# WINDSURF
+--ignore='windsurf/cli/'
+--ignore='windsurf/extensions/'
+--ignore='windsurf/argv.json'
+
 # ZED
 --ignore='zed/\.tmp*'
 --ignore='zed/conversations/'
