@@ -20,6 +20,8 @@ source $ZSH/oh-my-zsh.sh
 # ----- Homebrew -----
 export PATH=/opt/homebrew/bin:$PATH
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # ----- Neovim -----
 export PATH="$PATH:/opt/nvim/"
 # export TERM=xterm-256color
@@ -92,7 +94,6 @@ export HERD_PHP_84_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/p
 
 # Herd injected PHP 8.2 configuration.
 export HERD_PHP_82_INI_SCAN_DIR="$HOME/Library/Application Support/Herd/config/php/82/"
-export PATH="$HOME/.local/bin:$PATH"
 
 # opencode
 export PATH=$HOME/.opencode/bin:$PATH
