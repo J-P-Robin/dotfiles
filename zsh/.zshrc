@@ -47,6 +47,7 @@ export PATH="$PATH:/opt/nvim/"
 
 # ----- FNM -----
 eval "$(fnm env --use-on-cd --version-file-strategy=local)"
+eval "$(fnm completions --shell zsh)"
 # export FNM_DIR="$HOME/.fnm"
 # [ -s "$FNM_DIR/fnm.sh" ] && \. "$FNM_DIR/fnm.sh"
 # export PATH="$FNM_DIR:$PATH"

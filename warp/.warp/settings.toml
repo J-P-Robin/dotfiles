@@ -101,6 +101,7 @@ default_session_mode = "terminal"
 
 [terminal]
 osc52_clipboard_access = "write_only"
+show_terminal_zero_state_block = false
 
 [terminal.input]
 show_hint_text = false
