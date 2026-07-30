@@ -15,10 +15,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  spec = {
-    { import = "plugins" },
-    { import = "plugins.lsp" },
-  },
+  { "folke/lazy.nvim", enabled = false },
+}, {
   ui = {
     border = "single",
   },
