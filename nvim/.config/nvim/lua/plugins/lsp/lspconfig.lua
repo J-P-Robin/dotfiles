@@ -85,7 +85,7 @@ return {
         virtual_text = false,
         signs = true,
         underline = true,
-        update_in_insert = true,
+        update_in_insert = false,
         severity_sort = true,
       })
 
@@ -108,6 +108,43 @@ return {
         group = vim.api.nvim_create_augroup("float_diagnostic", { clear = true }),
         callback = function()
           vim.diagnostic.open_float(nil, { focus = false, border = "single" })
+        end,
+      })
+
+      vim.api.nvim_create_autocmd("LspAttach", {
+        group = vim.api.nvim_create_augroup("LspKeymaps", { clear = true }),
+        callback = function(event)
+          local opts = { buffer = event.buf }
+          vim.keymap.set(
+            "n",
+            "gd",
+            vim.lsp.buf.definition,
+            vim.tbl_extend("force", opts, { desc = "Go to definition" })
+          )
+          vim.keymap.set(
+            "n",
+            "gr",
+            vim.lsp.buf.references,
+            vim.tbl_extend("force", opts, { desc = "Find references" })
+          )
+          vim.keymap.set(
+            "n",
+            "gI",
+            vim.lsp.buf.implementation,
+            vim.tbl_extend("force", opts, { desc = "Go to implementation" })
+          )
+          vim.keymap.set(
+            "n",
+            "K",
+            vim.lsp.buf.hover,
+            vim.tbl_extend("force", opts, { desc = "Hover documentation" })
+          )
+          vim.keymap.set(
+            "n",
+            "<leader>ca",
+            vim.lsp.buf.code_action,
+            vim.tbl_extend("force", opts, { desc = "Code action" })
+          )
         end,
       })
     end,
