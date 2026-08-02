@@ -1,6 +1,7 @@
 return {
   "folke/which-key.nvim",
-  event = "VeryLazy",
+  -- keymaps.lua registers mappings through which-key during startup.
+  lazy = false,
   keys = {
     {
       "<leader>?",

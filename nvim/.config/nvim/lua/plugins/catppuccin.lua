@@ -2,9 +2,6 @@ return {
   "catppuccin/nvim",
   name = "catppuccin",
   priority = 1000,
-  init = function()
-    vim.cmd.colorscheme("catppuccin")
-  end,
   config = function()
     require("catppuccin").setup({
       flavour = vim.env.THEME_MODE == "light" and "latte" or "mocha",
@@ -13,11 +10,9 @@ return {
       highlight_overrides = {
         all = function(colors)
           return {
-            --Cursor = { fg = "#ffffff", bg = colors.rosewater },
             CursorLineNr = { fg = colors.rosewater, style = { "bold" } },
             CursorLine = { bg = "NONE" },
             IndentBlanklineIndent1 = { fg = colors.overlay0 },
-
             CmpItemMenu = { fg = colors.surface0 },
           }
         end,
@@ -27,5 +22,6 @@ return {
         neotree = true,
       },
     })
+    vim.cmd.colorscheme("catppuccin")
   end,
 }

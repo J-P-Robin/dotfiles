@@ -1,8 +1,6 @@
 return {
   "stevearc/oil.nvim",
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-  },
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   cmd = "Oil",
   config = function()
     local oil = require("oil")
@@ -20,28 +18,22 @@ return {
             table.insert(ret, line)
           end
         end
-
         rawset(self, key, ret)
         return ret
       end,
     })
 
     oil.setup({
-      keymaps = {
-        ["<C-s>"] = false,
-        ["<C-h>"] = false,
-      },
+      keymaps = { ["<C-s>"] = false, ["<C-h>"] = false },
       view_options = {
         is_hidden_file = function(name, _)
           local dir = oil.get_current_dir()
-
           if not dir then
             return false
           end
-
           return vim.list_contains(git_ignored[dir], name)
         end,
-        is_always_hidden = function(name, bufnr)
+        is_always_hidden = function(name, _)
           return vim.startswith(name, ".git")
         end,
       },

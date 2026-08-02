@@ -1,7 +1,6 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.8",
     dependencies = {
       "nvim-lua/plenary.nvim",
       {
@@ -20,13 +19,7 @@ return {
         pickers = {
           find_files = {
             hidden = true,
-            find_command = {
-              "rg",
-              "--files",
-              "--hidden",
-              "--glob",
-              "!**/.git/*",
-            },
+            find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
           },
         },
         defaults = {
@@ -39,9 +32,7 @@ return {
             "--hidden",
           },
           mappings = {
-            n = {
-              ["<M-p>"] = action_layout.toggle_preview,
-            },
+            n = { ["<M-p>"] = action_layout.toggle_preview },
             i = {
               ["<esc>"] = actions.close,
               ["<C-d>"] = actions.delete_buffer + actions.move_to_top,
@@ -51,14 +42,12 @@ return {
         },
       })
 
-      require("telescope").load_extension("fzf")
+      telescope.load_extension("fzf")
     end,
   },
   {
     "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-    },
+    dependencies = { "nvim-telescope/telescope.nvim" },
     lazy = true,
     config = function()
       local telescope = require("telescope")

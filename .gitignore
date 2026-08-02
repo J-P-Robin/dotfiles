@@ -8,3 +8,6 @@ tmuxp/.tmuxp/statamic*.yaml
 
 # IDE
 .history
+
+# Local Dex task state
+.dex/

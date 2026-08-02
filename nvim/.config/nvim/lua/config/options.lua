@@ -17,6 +17,7 @@ vim.opt.wrap = false
 vim.opt.autoread = true
 vim.opt.laststatus = 2
 vim.opt.backspace = "2"
+vim.opt.sessionoptions:append("localoptions")
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "auto"
