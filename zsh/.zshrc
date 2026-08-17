@@ -46,6 +46,8 @@ export PATH="$PATH:/opt/nvim/"
 # }
 
 # ----- FNM -----
+# Script-installed fnm (Linux) lands here; no-op on macOS where Homebrew provides fnm
+[ -d "$HOME/.local/share/fnm" ] && export PATH="$HOME/.local/share/fnm:$PATH"
 eval "$(fnm env --use-on-cd --version-file-strategy=local)"
 eval "$(fnm completions --shell zsh)"
 # export FNM_DIR="$HOME/.fnm"
