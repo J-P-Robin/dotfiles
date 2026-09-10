@@ -71,6 +71,35 @@ return {
             },
           },
           filetypes = { "css", "scss" },
+          root_dir = function(bufnr, on_dir)
+            local root = vim.fs.root(bufnr, {
+              ".stylelintrc",
+              ".stylelintrc.js",
+              ".stylelintrc.cjs",
+              ".stylelintrc.json",
+              ".stylelintrc.yaml",
+              ".stylelintrc.yml",
+              "stylelint.config.js",
+              "stylelint.config.cjs",
+              "stylelint.config.mjs",
+              "package.json",
+            })
+            if not root then
+              return
+            end
+
+            local ok, pkg = pcall(function()
+              return vim.json.decode(table.concat(vim.fn.readfile(root .. "/node_modules/stylelint/package.json"), "\n"))
+            end)
+
+            -- The official stylelint server silently produces no diagnostics below v14
+            local major = ok and pkg and tonumber((pkg.version or ""):match("^(%d+)"))
+            if major and major < 14 then
+              return
+            end
+
+            on_dir(root)
+          end,
         },
         ts_ls = {},
         twiggy_language_server = {},

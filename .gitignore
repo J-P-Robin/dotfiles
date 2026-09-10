@@ -1,11 +1,5 @@
 .DS_Store
 
-# tmuxp
-tmuxp/.tmuxp/cds*.yaml
-tmuxp/.tmuxp/dk*.yaml
-tmuxp/.tmuxp/hs*.yaml
-tmuxp/.tmuxp/statamic*.yaml
-
 # IDE
 .history
 

@@ -29,6 +29,18 @@ local ox_markers = {
   ".oxlintrc.json",
 }
 
+local stylelint_markers = {
+  ".stylelintrc",
+  ".stylelintrc.js",
+  ".stylelintrc.cjs",
+  ".stylelintrc.json",
+  ".stylelintrc.yaml",
+  ".stylelintrc.yml",
+  "stylelint.config.js",
+  "stylelint.config.cjs",
+  "stylelint.config.mjs",
+}
+
 local function project_has_marker(filename, markers)
   return vim.fs.find(markers, { path = filename, upward = true })[1] ~= nil
 end
@@ -54,7 +66,7 @@ local function format_options(bufnr)
     return nil
   end
 
-  return { lsp_format = "never", timeout_ms = 1000 }
+  return { lsp_format = "never", timeout_ms = 3000 }
 end
 
 return {
@@ -76,17 +88,27 @@ return {
     },
     opts = {
       formatters_by_ft = {
+        css = { "stylelint" },
         lua = { "stylua" },
-        twig = { "twig-cs-fixer" },
+        scss = { "stylelint" },
+        twig = { "djlint", "twig-cs-fixer" },
         javascript = { "oxfmt" },
         javascriptreact = { "oxfmt" },
         typescript = { "oxfmt" },
         typescriptreact = { "oxfmt" },
       },
       formatters = {
+        djlint = {
+          args = { "--reformat", "--profile=jinja", "--indent=2", "-" },
+        },
         oxfmt = {
           condition = function(_, ctx)
             return project_has_marker(ctx.filename, ox_markers)
+          end,
+        },
+        stylelint = {
+          condition = function(_, ctx)
+            return project_has_marker(ctx.filename, stylelint_markers)
           end,
         },
       },

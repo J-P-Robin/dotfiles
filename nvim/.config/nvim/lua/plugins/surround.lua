@@ -1,5 +1,5 @@
 return {
-  "kylechui/nvim-surround",
+  "nvim-mini/mini.surround",
   event = { "BufReadPre", "BufNewFile" },
   opts = {},
 }

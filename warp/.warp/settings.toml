@@ -68,7 +68,7 @@ show_jump_to_bottom_of_block_button = true
 
 [appearance.themes]
 selected_system_themes = { dark = "dark", light = "light" }
-theme = { custom = { name = "Raycast Dark", path = "/Users/jprobin/.warp/themes/raycast/dark.yaml" } }
+theme = { custom = { name = "Raycast Dark", path = "raycast/dark.yaml" } }
 system_theme = false
 
 [appearance.vertical_tabs]

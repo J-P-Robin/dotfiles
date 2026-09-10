@@ -1,0 +1,26 @@
+# Port of Warp's "Raycast Dark" theme (~/.warp/themes/raycast/dark.yaml)
+# Accent color #DB8A78 has no Ghostty equivalent and is omitted.
+
+background = #010F14
+foreground = #ffffff
+cursor-color = #ffffff
+
+# normal
+palette = 0=#11111B
+palette = 1=#F38BA8
+palette = 2=#A6E3A1
+palette = 3=#F9E2AF
+palette = 4=#89B4FA
+palette = 5=#F5C2E7
+palette = 6=#95E2D5
+palette = 7=#CDD6F4
+
+# bright
+palette = 8=#CDD6F4
+palette = 9=#F38BA8
+palette = 10=#A6E3A1
+palette = 11=#F9E2AF
+palette = 12=#89B4FA
+palette = 13=#F5C2E7
+palette = 14=#95E2D5
+palette = 15=#CDD6F4

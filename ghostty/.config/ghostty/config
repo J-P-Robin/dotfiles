@@ -1,1 +1,22 @@
-theme = Catppuccin Mocha
+# theme = Catppuccin Mocha
+theme = raycast-dark
+
+# From Warp: MesloLGS NF @ 15, line height 1.3 (~10% adjustment; tweak to taste)
+font-family = MesloLGS NF
+font-size = 15
+adjust-cell-height = 10%
+
+# From Warp: background image at 25% opacity
+background-image = /Users/jprobin/.assets/images/blue_distortion_1.jpg
+background-image-opacity = 0.25
+background-image-fit = cover
+
+# From Warp: OSC52 clipboard write-only
+clipboard-read = deny
+clipboard-write = allow
+
+# From Warp: don't dim inactive panes
+unfocused-split-opacity = 1
+
+# From Warp: restore_session = false
+window-save-state = never

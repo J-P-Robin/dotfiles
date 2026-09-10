@@ -185,7 +185,7 @@ wk.add({ mode = "v", { "<leader>y", '"+y', desc = "Copy to clipboard" } })
 
 wk.add({
   {
-    "<leader>s",
+    "<leader>r",
     "<cmd> %s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
     desc = "Replace word under cursor",
   },
