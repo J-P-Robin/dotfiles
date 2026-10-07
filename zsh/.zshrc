@@ -123,3 +123,8 @@ export HERD_PHP_82_INI_SCAN_DIR="/Users/jprobin/Library/Application Support/Herd
 
 # Herd injected PHP 8.1 configuration.
 export HERD_PHP_81_INI_SCAN_DIR="/Users/jprobin/Library/Application Support/Herd/config/php/81/"
+
+# cd into a git worktree, picked with fzf
+cdw() { cd "$(git worktree list | fzf | awk '{print $1}')"; }
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
