@@ -8,6 +8,3 @@ windows:
   - window_name: git
     panes:
       -
-  - window_name: opencode
-    panes:
-      -
